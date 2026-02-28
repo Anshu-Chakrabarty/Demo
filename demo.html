@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gitanjali Group – Demo Homepage</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        body {
+            background: #f5f7fb;
+            color: #222;
+            overflow-x: hidden;
+        }
+        
+        section {
+            padding: 90px 60px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: auto;
+        }
+        
+        h2.section-title {
+            text-align: center;
+            font-size: 34px;
+            font-weight: 700;
+            margin-bottom: 60px;
+            color: #0b4f8a;
+        }
+        
+        button {
+            cursor: pointer;
+            border: none;
+            font-weight: 600;
+        }
+        /* TOP CATEGORY BAR */
+        
+        .top-bar {
+            background: #0b4f8a;
+            padding: 15px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: #fff;
+        }
+        
+        .top-bar .logo {
+            font-size: 26px;
+            font-weight: 800;
+        }
+        
+        .category-pills {
+            display: flex;
+            gap: 12px;
+        }
+        
+        .category-pills button {
+            background: #e0b44c;
+            padding: 8px 18px;
+            border-radius: 25px;
+        }
+        /* NAVBAR */
+        
+        nav {
+            position: sticky;
+            top: 0;
+            background: #fff;
+            padding: 18px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: 0.3s;
+        }
+        
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+        }
+        
+        nav ul li {
+            font-weight: 500;
+        }
+        
+        nav .admission {
+            background: #0b4f8a;
+            color: #fff;
+            padding: 8px 22px;
+            border-radius: 25px;
+        }
+        
+        nav.scrolled {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+        }
+        /* HERO */
+        
+        .hero {
+            background: linear-gradient(135deg, #0b4f8a, #093b67);
+            color: #fff;
+            padding: 120px 60px;
+            text-align: left;
+        }
+        
+        .hero .hero-content {
+            max-width: 600px;
+        }
+        
+        .hero h1 {
+            font-size: 48px;
+            font-weight: 800;
+            margin-bottom: 15px;
+        }
+        
+        .hero span {
+            color: #e0b44c;
+        }
+        
+        .hero p {
+            font-size: 18px;
+            margin-bottom: 25px;
+        }
+        
+        .hero button {
+            background: #e0b44c;
+            padding: 14px 32px;
+            border-radius: 30px;
+        }
+        /* STATS */
+        
+        .stats {
+            background: #0b4f8a;
+            color: #fff;
+            padding: 60px 0;
+        }
+        
+        .stats .container {
+            display: flex;
+            justify-content: space-around;
+            text-align: center;
+        }
+        
+        .stat h3 {
+            font-size: 40px;
+            font-weight: 800;
+        }
+        
+        .stat p {
+            margin-top: 8px;
+            font-size: 16px;
+        }
+        /* CTA BUTTON ROW */
+        
+        .cta-row {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            padding: 50px 0;
+            background: #f1f5fb;
+        }
+        
+        .cta-row button {
+            background: #fff;
+            border: 1px solid #0b4f8a;
+            padding: 14px 28px;
+            border-radius: 10px;
+        }
+        /* ABOUT */
+        
+        .about {
+            text-align: center;
+        }
+        
+        .about p {
+            max-width: 800px;
+            margin: 20px auto;
+            font-size: 17px;
+            line-height: 1.6;
+        }
+        /* VISION SECTION */
+        
+        .vision-section {
+            background: linear-gradient(135deg, #0b4f8a, #093b67);
+            color: #fff;
+        }
+        
+        .vision-grid {
+            display: flex;
+            gap: 40px;
+            justify-content: space-between;
+        }
+        
+        .vision-box {
+            flex: 1;
+            background: rgba(255, 255, 255, 0.08);
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        /* CAMPUSES */
+        
+        .campus-grid {
+            display: flex;
+            gap: 40px;
+            justify-content: center;
+        }
+        
+        .campus-card {
+            width: 320px;
+            height: 200px;
+            background: #0b4f8a;
+            color: #fff;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            font-weight: 600;
+        }
+        /* INSTITUTIONS */
+        
+        .institution-slider {
+            display: flex;
+            gap: 25px;
+            overflow: auto;
+        }
+        
+        .institution-card {
+            min-width: 250px;
+            background: #fff;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        /* RECOGNITIONS */
+        
+        .recognition-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 30px;
+            text-align: center;
+        }
+        
+        .recognition-box {
+            padding: 30px;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+        /* COURSES */
+        
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .course-card {
+            background: #fff;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        }
+        /* ACHIEVEMENT */
+        
+        .achievement {
+            background: #0b4f8a;
+            color: #fff;
+            text-align: center;
+            padding: 80px 20px;
+        }
+        
+        .achievement button {
+            background: #e0b44c;
+            padding: 12px 30px;
+            border-radius: 25px;
+            margin-top: 20px;
+        }
+        /* JOIN SECTION */
+        
+        .join-section {
+            text-align: center;
+            background: #f1f5fb;
+        }
+        
+        .join-section button {
+            background: #0b4f8a;
+            color: #fff;
+            padding: 12px 28px;
+            border-radius: 25px;
+            margin-top: 20px;
+        }
+        /* FOOTER */
+        
+        footer {
+            background: #08365d;
+            color: #fff;
+            padding: 60px;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+        }
+        
+        footer h4 {
+            margin-bottom: 15px;
+        }
+        
+        footer p {
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+        /* RESPONSIVE */
+        
+        @media(max-width:768px) {
+            section {
+                padding: 70px 20px;
+            }
+            .stats .container {
+                flex-direction: column;
+                gap: 30px;
+            }
+            .vision-grid {
+                flex-direction: column;
+            }
+            .campus-grid {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="top-bar">
+        <div class="logo">Gitanjali Group</div>
+        <div class="category-pills">
+            <button>Nursing</button>
+            <button>Pharmacy</button>
+            <button>Education</button>
+            <button>Physical Education</button>
+            <button>School</button>
+        </div>
+    </div>
+
+    <nav id="navbar">
+        <ul>
+            <li>Home</li>
+            <li>About</li>
+            <li>Institutions</li>
+            <li>Courses</li>
+            <li>Contact</li>
+        </ul>
+        <button class="admission">Admission</button>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Study at your <span>Dream Institute</span></h1>
+            <p>Think of Gitanjali Group of Institutions</p>
+            <button>Explore Now</button>
+        </div>
+    </section>
+
+    <div class="stats">
+        <div class="container">
+            <div class="stat">
+                <h3 class="counter" data-target="12">0</h3>
+                <p>Courses</p>
+            </div>
+            <div class="stat">
+                <h3 class="counter" data-target="8">0</h3>
+                <p>Institutions</p>
+            </div>
+            <div class="stat">
+                <h3 class="counter" data-target="2000">0</h3>
+                <p>Students</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="cta-row">
+        <button>Quick Apply</button>
+        <button>Download Prospectus</button>
+        <button>See Courses</button>
+        <button>Our Campuses</button>
+    </div>
+
+    <section class="about container">
+        <h2 class="section-title">Largest Educational Conglomerates in India</h2>
+        <p>Providing industry-aligned education with expert faculty and holistic development.</p>
+    </section>
+
+    <section class="vision-section">
+        <div class="container vision-grid">
+            <div class="vision-box">
+                <h3>Vision</h3>
+                <p>Inspiring excellence in education.</p>
+            </div>
+            <div class="vision-box">
+                <h3>Mission</h3>
+                <p>Delivering holistic and industry-ready learning.</p>
+            </div>
+            <div class="vision-box">
+                <h3>Philosophy</h3>
+                <p>Education that transforms lives.</p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Our Campuses</h2>
+        <div class="campus-grid">
+            <div class="campus-card">Sainthia Campus</div>
+            <div class="campus-card">Krishnanagar Campus</div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Our Institutions</h2>
+        <div class="institution-slider container">
+            <div class="institution-card">Institution 1</div>
+            <div class="institution-card">Institution 2</div>
+            <div class="institution-card">Institution 3</div>
+            <div class="institution-card">Institution 4</div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Recognitions & Accreditations</h2>
+        <div class="recognition-grid container">
+            <div class="recognition-box">Recognition 1</div>
+            <div class="recognition-box">Recognition 2</div>
+            <div class="recognition-box">Recognition 3</div>
+            <div class="recognition-box">Recognition 4</div>
+        </div>
+    </section>
+
+    <section>
+        <h2 class="section-title">Our Courses</h2>
+        <div class="course-grid container">
+            <div class="course-card">B.Sc Nursing</div>
+            <div class="course-card">D.Pharm</div>
+            <div class="course-card">B.Ed</div>
+            <div class="course-card">Physical Education</div>
+        </div>
+    </section>
+
+    <section class="achievement">
+        <h2>2000+ Students Empowered</h2>
+        <button>Apply Now</button>
+    </section>
+
+    <section class="join-section">
+        <h2 class="section-title">Join Us On Campus</h2>
+        <button>Contact Admissions</button>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div>
+                <h4>Gitanjali Group</h4>
+                <p>Suri, Birbhum, West Bengal</p>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <p>About</p>
+                <p>Admissions</p>
+                <p>Contact</p>
+            </div>
+            <div>
+                <h4>Programs</h4>
+                <p>Nursing</p>
+                <p>Pharmacy</p>
+                <p>Education</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        window.addEventListener("scroll", function() {
+            document.getElementById("navbar").classList.toggle("scrolled", window.scrollY > 50);
+        });
+        document.querySelectorAll(".counter").forEach(counter => {
+            const target = +counter.getAttribute("data-target");
+            let count = 0;
+            const update = () => {
+                count += target / 100;
+                if (count < target) {
+                    counter.innerText = Math.ceil(count);
+                    setTimeout(update, 20);
+                } else {
+                    counter.innerText = target + "+";
+                }
+            }
+            update();
+        });
+    </script>
+
+</body>
+
+</html>
